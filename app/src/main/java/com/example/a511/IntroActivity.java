@@ -37,8 +37,7 @@ public class IntroActivity extends AppCompatActivity {
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(IntroActivity.this, MainActivity.class);
-                startActivity(intent);
+                viewPager.setCurrentItem(2);
             }
         });
 
@@ -83,12 +82,15 @@ public class IntroActivity extends AppCompatActivity {
             if (position == 0){
 
                 btn.setVisibility(View.INVISIBLE);
+                textView.setVisibility(View.VISIBLE);
             }else if(position == 1 ){
                 btn.setVisibility(View.INVISIBLE);
+                textView.setVisibility(View.VISIBLE);
             }else{
                 animation = AnimationUtils.loadAnimation(IntroActivity.this,R.anim.animation);
                 btn.setAnimation(animation);
                 btn.setVisibility(View.VISIBLE);
+                textView.setVisibility(View.INVISIBLE);
             }
 
         }
